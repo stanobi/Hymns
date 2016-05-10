@@ -1,0 +1,100 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="stanlee.project.com.hymns.hymn_screen">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number2"
+                    android:layout_below="@+id/number1"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number3"
+                    android:layout_below="@+id/number2"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number4"
+                    android:layout_below="@+id/number3"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number5"
+                    android:layout_below="@+id/number4"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number6"
+                    android:layout_below="@+id/number5"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number7"
+                    android:layout_below="@+id/number6"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+                <TextView style="?android:textAppearanceMedium"
+                    android:id="@+id/number8"
+                    android:layout_below="@+id/number7"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hymn1"
+                    android:textSize="20sp"
+                    android:padding="16dp" />
+
+        </RelativeLayout>
+
+</ScrollView>
