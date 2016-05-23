@@ -20,29 +20,34 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/notification_large_icon_height"/>
 
-        <EditText
-            android:id="@+id/hymnNumber"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/theHymnBook"
-            android:layout_marginTop="30px"
-            android:layout_centerHorizontal="true"
-            android:hint="@string/noHymnVerse"
-            android:textSize="@dimen/abc_text_size_body_1_material"
-            android:inputType="number"
-            android:maxLength="4"
-            android:gravity="center"
-            android:singleLine="true" />
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true">
 
-        <Button
-            android:id="@+id/searchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/hymnNumber"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20px"
-            android:background="@android:color/transparent"
-            android:text="@string/search" />
+            <EditText
+                android:id="@+id/hymnNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/noHymnVerse"
+                android:textSize="20dp"
+                android:inputType="number"
+                android:maxLength="3"
+                android:gravity="center"
+                android:singleLine="true" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hymnNumber"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_search_black_24dp"
+                />
+
+        </RelativeLayout>
 
 
     </RelativeLayout>

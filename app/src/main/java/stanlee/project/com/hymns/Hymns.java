@@ -4,13 +4,20 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-public class Hymns extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Hymns extends AppCompatActivity {
+    ApplicationSession session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hymns);
         switchFragments(R.id.FragmentContainer,new SplashScreen());
+        session = ApplicationSession.getInstance();
+        ArrayList<String> efikHymns = ApplicationSession.loadHymns(this,"efikHymn.txt");
+        ArrayList<String> englishHymns = ApplicationSession.loadHymns(this,"englishHymn.txt");
+        session.setEfikHymns(efikHymns);
+        session.setEnglishHymns(englishHymns);
     }
 
     public void switchFragments(int contentFrameId, android.support.v4.app.Fragment replacingFragment) {
@@ -28,5 +35,7 @@ public class Hymns extends AppCompatActivity {
                 .addToBackStack(replacingFragment.getClass().getSimpleName())
                 .commit();
     }
+
+
 
 }

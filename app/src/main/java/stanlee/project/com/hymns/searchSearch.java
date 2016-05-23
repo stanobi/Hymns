@@ -4,11 +4,12 @@ package stanlee.project.com.hymns;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -16,9 +17,10 @@ import android.widget.EditText;
  */
 public class searchSearch extends Fragment {
 
-    private Button searchHymnButton;
+    private AppCompatImageButton searchHymnButton;
     private EditText hymnNumberInputField;
     private Hymns hymns;
+    private int hymnValue;
 
     public searchSearch() {
         // Required empty public constructor
@@ -32,15 +34,27 @@ public class searchSearch extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_search_search, container, false);
 
         ((Hymns)getActivity()).getSupportActionBar().show();
-        searchHymnButton = (Button) view.findViewById(R.id.searchButton);
+        searchHymnButton = (AppCompatImageButton) view.findViewById(R.id.searchButton);
         hymnNumberInputField = (EditText) view.findViewById(R.id.hymnNumber);
         searchHymnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), ScreenSlidePagerActivity.class);
-                intent.putExtra("userHymnNumber",Integer.valueOf(hymnNumberInputField.getText().toString()));
-                getActivity().startActivity(intent);
+                //Intent intent = new Intent(getActivity(), ScreenSlidePagerActivity.class);
+                Intent intent = new Intent(getActivity(), main_hymn_activity.class);
+                try{
+                    hymnValue = Integer.valueOf(hymnNumberInputField.getText().toString());
+                    if(hymnValue < 1 || hymnValue > 366){
+                        Toast.makeText( getActivity(),"Invalid Hymn Number. Hymn number range from 1-369",Toast.LENGTH_LONG).show();
+                    }else{
+                        intent.putExtra("userHymnNumber",hymnValue);
+                        getActivity().startActivity(intent);
+                    }
+
+                }catch (NumberFormatException ex){
+                    Toast.makeText( getActivity(),"Invalid Hymn Number. Hymn number range from 1-369",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

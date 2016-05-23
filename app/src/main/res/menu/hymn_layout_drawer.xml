@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Hymn"
+            android:icon="@mipmap/books_icon"
+            android:title="@string/Hymn" />
+        <item
+            android:id="@+id/nav_About"
+            android:icon="@drawable/ic_contacts_black_24dp"
+            android:title="@string/About"/>
+        <item
+            android:id="@+id/nav_Help"
+            android:icon="@drawable/ic_email_black_12dp"
+            android:title="@string/Help" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Help Feedback" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

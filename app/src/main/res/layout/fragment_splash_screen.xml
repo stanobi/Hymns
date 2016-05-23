@@ -10,12 +10,21 @@
         android:background="@color/colorPrimary"
         android:layout_gravity="center_horizontal|top">
 
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/books_icon" />
+
         <TextView
-        android:id="@+id/splashScreenText"
+        android:id="@+id/splashScremaenText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="15dp"
         android:text="@string/welcomeNote"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_centerInParent="true"

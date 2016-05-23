@@ -54,10 +54,10 @@ public class ScreenSlidePagerActivity extends AppCompatActivity {
                 hymn_screen hymnScreen = (hymn_screen)mPager.getAdapter().instantiateItem(mPager,position);
                 if(position == 0){
                     setActionBarTitle("HYMN "+number+" - english");
-                    hymnScreen.setHymnContent(hymnScreen.getEnglishHymn(number));
+//                    hymnScreen.setHymnContent(hymnScreen.getEnglishHymn(number));
                 }else{
                     setActionBarTitle("HYMN "+number+" - efik");
-                    hymnScreen.setHymnContent(hymnScreen.getEfikHymn(number));
+//                    hymnScreen.setHymnContent(hymnScreen.getEfikHymn(number));
                 }
 
             }

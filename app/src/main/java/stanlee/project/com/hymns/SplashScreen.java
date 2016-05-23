@@ -1,6 +1,7 @@
 package stanlee.project.com.hymns;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -32,7 +33,10 @@ public class SplashScreen extends Fragment {
         splashScreenHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ((Hymns)getActivity()).switchFragments(R.id.FragmentContainer,new searchSearch());
+                Intent intent = new Intent(getActivity(), main_hymn_activity.class);
+                intent.putExtra("userHymnNumber",1);
+                getActivity().startActivity(intent);
+                getActivity().finish();
             }
         },3000L);
         return view;
