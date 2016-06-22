@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="stanlee.project.com.hymns">
+
+    <uses-sdk tools:overrideLibrary="com.orm.dsl"></uses-sdk>
 
     <application
         android:allowBackup="true"
@@ -8,14 +11,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
+
+        <!--Database configuration-->
+        <meta-data android:name="DATABASE" android:value="hymn.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="stanlee.project.com.hymns.dataTransaction" />
+
+        <!--View configuration-->
         <activity android:name=".Hymns">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ScreenSlidePagerActivity" />
+
         <activity
             android:name=".main_hymn_activity"
             android:label="@string/title_activity_main_hymn_activity"
@@ -25,9 +37,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="stanlee.project.com.hymns.Hymns" />
         </activity>
+
         <activity
             android:name=".SearchDialog"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -36,8 +50,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="stanlee.project.com.hymns.Hymns" />
         </activity>
+
         <activity android:name=".AboutActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+        </activity>
     </application>
 
 </manifest>
