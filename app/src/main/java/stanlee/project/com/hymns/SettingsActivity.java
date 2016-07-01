@@ -25,10 +25,10 @@ import android.view.MenuItem;
 import java.util.List;
 
 /**
- * A {@link PreferenceActivity} that presents a set of application settings. On
- * handset devices, settings are presented as a single list. On tablets,
- * settings are split by category, with category headers shown to the left of
- * the list of settings.
+ * A {@link PreferenceActivity} that presents a set of application Settings. On
+ * handset devices, Settings are presented as a single list. On tablets,
+ * Settings are split by category, with category headers shown to the left of
+ * the list of Settings.
  * <p/>
  * See <a href="http://developer.android.com/design/patterns/settings.html">
  * Android Design: Settings</a> for design guidelines and the <a
@@ -37,8 +37,8 @@ import java.util.List;
  */
 public class SettingsActivity extends AppCompatPreferenceActivity {
     /**
-     * Determines whether to always show the simplified settings UI, where
-     * settings are presented in a single list. When false, settings are shown
+     * Determines whether to always show the simplified Settings UI, where
+     * Settings are presented in a single list. When false, Settings are shown
      * as a master/detail two-pane view on tablets. When true, a single pane is
      * shown on tablets.
      */
@@ -105,11 +105,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     }
 
     /**
-     * Determines whether the simplified settings UI should be shown. This is
+     * Determines whether the simplified Settings UI should be shown. This is
      * true if this is forced via {@link #ALWAYS_SIMPLE_PREFS}, or the device
      * doesn't have newer APIs like {@link PreferenceFragment}, or the device
      * doesn't have an extra-large screen. In these cases, a single-pane
-     * "simplified" settings UI should be shown.
+     * "simplified" Settings UI should be shown.
      */
     private static boolean isSimplePreferences(Context context) {
         return ALWAYS_SIMPLE_PREFS
@@ -175,7 +175,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     }
 
     /**
-     * Shows the simplified settings UI if the device configuration if the
+     * Shows the simplified Settings UI if the device configuration if the
      * device configuration dictates that a simplified, single-pane UI should be
      * shown.
      */
@@ -243,7 +243,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     /**
      * This fragment shows general preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * activity is showing a two-pane Settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class GeneralPreferenceFragment extends PreferenceFragment {
@@ -274,7 +274,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     /**
      * This fragment shows notification preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * activity is showing a two-pane Settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class NotificationPreferenceFragment extends PreferenceFragment {
@@ -304,7 +304,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     /**
      * This fragment shows data and sync preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * activity is showing a two-pane Settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class DataSyncPreferenceFragment extends PreferenceFragment {

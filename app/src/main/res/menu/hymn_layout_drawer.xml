@@ -11,13 +11,14 @@
             android:icon="@drawable/ic_contacts_black_24dp"
             android:title="@string/About"/>
         <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/Setting" />
+        <item
             android:id="@+id/nav_Help"
             android:icon="@drawable/ic_email_black_12dp"
             android:title="@string/Help" />
-        <item
-            android:id="@+id/setting"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/Help" />
+
     </group>
 
     <!--<item android:title="Communicate">-->

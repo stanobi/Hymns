@@ -22,7 +22,7 @@
 
     <!-- Strings related to Settings -->
 
-    <!-- Example General settings -->
+    <!-- Example General Settings -->
     <string name="pref_header_general">General</string>
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
@@ -45,7 +45,7 @@
         <item>-1</item>
     </string-array>
 
-    <!-- Example settings for Data & Sync -->
+    <!-- Example Settings for Data & Sync -->
     <string name="pref_header_data_sync">Data &amp; sync</string>
 
     <string name="pref_title_sync_frequency">Sync frequency</string>
@@ -68,7 +68,7 @@
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
-    <!-- Example settings for Notifications -->
+    <!-- Example Settings for Notifications -->
     <string name="pref_header_notifications">Notifications</string>
     <string name="pref_header_AppInfo">App Info</string>
 
@@ -79,4 +79,23 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
 
+    <string name="selectFontSize">Select font size</string>
+    <string-array name="fontSizes">
+        <item>14</item>
+        <item>18</item>
+        <item>24</item>
+    </string-array>
+
+    <string name="selectFontStyle">Select font style</string>
+    <string-array name="fontstyles">
+        <item>News Times Roman</item>
+        <item>Lucrades</item>
+        <item>Calligraphy</item>
+    </string-array>
+
+    <string name="selectThemecolor">Select theme color</string>
+    <string-array name="themes">
+        <item>Blue</item>
+        <item>Red</item>
+    </string-array>
 </resources>

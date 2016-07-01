@@ -20,6 +20,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import stanlee.project.com.hymns.HymnMenu.About;
+import stanlee.project.com.hymns.HymnMenu.Setting;
+
 public class main_hymn_activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -47,6 +50,7 @@ public class main_hymn_activity extends AppCompatActivity
         setContentView(R.layout.hymn_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         Intent intent = new Intent(this,SearchDialog.class);
@@ -147,11 +151,11 @@ public class main_hymn_activity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Hymn) {
-            // Handle the camera action
-//        } else if (id == R.id.nav_Setting) {
-//            startActivity(new Intent(main_hymn_activity.this,SettingsActivity.class));
+            //Takes you the Main Hymn
+        } else if (id == R.id.setting) {
+            startActivity(new Intent(main_hymn_activity.this,Setting.class));
         } else if (id == R.id.nav_About) {
-            startActivity(new Intent(main_hymn_activity.this,AboutActivity.class));
+            startActivity(new Intent(main_hymn_activity.this,About.class));
         } else if (id == R.id.nav_Help) {
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.putExtra(Intent.EXTRA_EMAIL,new String[]{"success4stan@gmail.com"});

@@ -14,6 +14,11 @@ import java.util.ArrayList;
 public class ApplicationSession {
     ArrayList<String> englishHymns;
     ArrayList<String> efikHymns;
+
+    private int selectedTextSize;
+    private String selectedFontStyle;
+    private String selectedTheme;
+
     private static ApplicationSession ourInstance = new ApplicationSession();
 
     public static ApplicationSession getInstance() {
@@ -37,6 +42,30 @@ public class ApplicationSession {
 
     public void setEfikHymns(ArrayList<String> efikHymns) {
         this.efikHymns = efikHymns;
+    }
+
+    public int getSelectedTextSize() {
+        return selectedTextSize;
+    }
+
+    public void setSelectedTextSize(int selectedTextSize) {
+        this.selectedTextSize = selectedTextSize;
+    }
+
+    public void setSelectedFontStyle(String selectedFontStyle) {
+        this.selectedFontStyle = selectedFontStyle;
+    }
+
+    public String getSelectedFontStyle() {
+        return selectedFontStyle;
+    }
+
+    public String getSelectedTheme() {
+        return selectedTheme;
+    }
+
+    public void setSelectedTheme(String selectedTheme) {
+        this.selectedTheme = selectedTheme;
     }
 
     public static ArrayList<String> loadHymns(Context context, String fileName){

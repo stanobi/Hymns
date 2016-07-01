@@ -3,31 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="stanlee.project.com.hymns">
 
-    <uses-sdk tools:overrideLibrary="com.orm.dsl"></uses-sdk>
+    <uses-sdk tools:overrideLibrary="com.orm.dsl" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/books_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.orm.SugarApp"
         android:theme="@style/MyMaterialTheme">
 
-        <!--Database configuration-->
-        <meta-data android:name="DATABASE" android:value="hymn.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="stanlee.project.com.hymns.dataTransaction" />
+        <!-- Database configuration -->
+        <meta-data
+            android:name="DATABASE"
+            android:value="hymn.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="4" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="stanlee.project.com.hymns.dataTransaction" />
 
-        <!--View configuration-->
+        <!-- View configuration -->
         <activity android:name=".Hymns">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ScreenSlidePagerActivity" />
-
         <activity
             android:name=".main_hymn_activity"
             android:label="@string/title_activity_main_hymn_activity"
@@ -37,11 +45,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="stanlee.project.com.hymns.Hymns" />
         </activity>
-
         <activity
             android:name=".SearchDialog"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -50,8 +56,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="stanlee.project.com.hymns.Hymns" />
         </activity>
-
-        <activity android:name=".AboutActivity"
+        <activity
+            android:name=".HymnMenu.About"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+        </activity>
+        
+        <activity android:name=".HymnMenu.Setting"
+            android:label="@string/Setting"
             android:theme="@style/Theme.AppCompat.Light.Dialog">
         </activity>
     </application>

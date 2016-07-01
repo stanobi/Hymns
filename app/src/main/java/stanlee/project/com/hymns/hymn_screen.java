@@ -1,6 +1,7 @@
 package stanlee.project.com.hymns;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ public class hymn_screen extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup view = (ViewGroup)inflater.inflate(R.layout.fragment_hymn_screen, container, false);
         textView1 = (TextView) view.findViewById(R.id.number1);
+        textView1.setTextSize(ApplicationSession.getInstance().getSelectedTextSize());
+        textView1.setTypeface(Typeface.create(ApplicationSession.getInstance().getSelectedFontStyle() ,Typeface.BOLD));
         setHymnContent(ApplicationSession.getInstance().getEnglishHymns().get(getArguments().getInt("hymnNumber")-1));
         return view;
     }
