@@ -2,10 +2,8 @@ package stanlee.project.com.hymns;
 
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,6 +14,36 @@ public class Hymns extends AppCompatActivity {
     ApplicationSession session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Database initialization
+        Settings st = null;
+        try{
+            st  = Settings.first(Settings.class);
+        }catch (SQLiteException sqlEx){
+            Toast.makeText(this,"SqliteException Occured while trying to get Settings",Toast.LENGTH_LONG).show();
+        }
+        if(st == null){
+            Toast.makeText(this,"There is no setting.",Toast.LENGTH_LONG).show();
+            //insert default values
+            st = new Settings("DEFAULT",14,"BLUE");
+            st.save();
+            ApplicationSession.getInstance().setSelectedFontStyle("DEFAULT");
+            ApplicationSession.getInstance().setSelectedTextSize(14);
+            ApplicationSession.getInstance().setSelectedTheme("BLUE");
+
+        }else{
+            ApplicationSession.getInstance().setSelectedFontStyle(st.getFontType());
+            ApplicationSession.getInstance().setSelectedTextSize(st.getFontSize());
+            ApplicationSession.getInstance().setSelectedTheme(st.getThemeColor());
+        }
+
+        //Setting the Theme
+        if(ApplicationSession.getInstance().getSelectedTheme().equalsIgnoreCase("BLUE")){
+            setTheme(R.style.MyMaterialTheme);
+        }else{
+            setTheme(R.style.MyMaterialThemeRed);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hymns);
         switchFragments(R.id.FragmentContainer,new SplashScreen());
@@ -25,30 +53,7 @@ public class Hymns extends AppCompatActivity {
         session.setEfikHymns(efikHymns);
         session.setEnglishHymns(englishHymns);
 
-        //Database initialization
-        Settings st = null;
-        try{
-            st  = Settings.first(Settings.class);
-        }catch (SQLiteException sqlEx){
-            Log.d("SqLiteExce : ","SqliteException Occured while trying to get Settings");
-            Toast.makeText(this,"SqliteException Occured while trying to get Settings",Toast.LENGTH_LONG).show();
-        }
-        if(st == null){
-            Toast.makeText(this,"There is no setting.",Toast.LENGTH_LONG).show();
-            //insert default values
-            st = new Settings("Ludacris",10,"Blue");
-            st.save();
-            ApplicationSession.getInstance().setSelectedFontStyle("Ludacris");
-            ApplicationSession.getInstance().setSelectedTextSize(10);
-            ApplicationSession.getInstance().setSelectedTheme("Blue");
 
-            Snackbar.make(null ,"Record inserted!!",Snackbar.LENGTH_LONG).show();
-
-        }else{
-            ApplicationSession.getInstance().setSelectedFontStyle(st.getFontType());
-            ApplicationSession.getInstance().setSelectedTextSize(st.getFontSize());
-            ApplicationSession.getInstance().setSelectedTheme(st.getThemeColor());
-        }
     }
 
     public void switchFragments(int contentFrameId, android.support.v4.app.Fragment replacingFragment) {

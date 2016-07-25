@@ -1,7 +1,10 @@
 package stanlee.project.com.hymns;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -9,6 +12,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -19,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import stanlee.project.com.hymns.HymnMenu.About;
 import stanlee.project.com.hymns.HymnMenu.Setting;
@@ -43,13 +48,32 @@ public class main_hymn_activity extends AppCompatActivity
     private PagerAdapter mPagerAdapter;
     private int number;
     private Bundle bundle = new Bundle();
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Setting the Theme
+        if(ApplicationSession.getInstance().getSelectedTheme().equalsIgnoreCase("BLUE")){
+            setTheme(R.style.MyMaterialTheme_App);
+        }else{
+            setTheme(R.style.MyMaterialThemeRed_App);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hymn_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        linearLayout = (LinearLayout) navigationView.getHeaderView(0).findViewById(R.id.Navigation_background);
+
+        //Changing the backGround of the NavigationView
+        if(ApplicationSession.getInstance().getSelectedTheme().equalsIgnoreCase("BLUE")){
+            setBackgroundDrawable(linearLayout,ContextCompat.getDrawable(getApplicationContext(),R.drawable.flyingdove));
+        }else{
+            setBackgroundDrawable(linearLayout,ContextCompat.getDrawable(getApplicationContext(),R.drawable.redthemebackground));
+        }
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -67,7 +91,7 @@ public class main_hymn_activity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         // Instantiate a ViewPager and a PagerAdapter.
@@ -200,6 +224,16 @@ public class main_hymn_activity extends AppCompatActivity
         @Override
         public CharSequence getPageTitle(int position) {
             return tabTitles[position];
+        }
+    }
+
+    @SuppressLint({"NewApi"})
+    public static void setBackgroundDrawable(View view, Drawable drawable) {
+        int sdk = Build.VERSION.SDK_INT;
+        if(sdk < 17) {
+            view.setBackgroundDrawable(drawable);
+        } else {
+            view.setBackground(drawable);
         }
     }
 }

@@ -4,6 +4,7 @@
     package="stanlee.project.com.hymns">
 
     <uses-sdk tools:overrideLibrary="com.orm.dsl" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"

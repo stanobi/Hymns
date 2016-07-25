@@ -79,12 +79,14 @@
         android:gravity="center">
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/OKbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="OK"/>
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/CANCELbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CANCEL"/>

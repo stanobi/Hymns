@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="?attr/colorPrimaryDark"
         android:layout_gravity="center_horizontal|top">
 
         <android.support.v7.widget.AppCompatImageView
@@ -24,7 +24,7 @@
         android:layout_below="@+id/logo"
         android:layout_marginTop="15dp"
         android:text="@string/welcomeNote"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_centerInParent="true"

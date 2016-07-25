@@ -88,14 +88,16 @@
 
     <string name="selectFontStyle">Select font style</string>
     <string-array name="fontstyles">
-        <item>News Times Roman</item>
-        <item>Lucrades</item>
-        <item>Calligraphy</item>
+        <item>DEFAULT</item>
+        <item>SANS SERIF</item>
+        <item>SERIF</item>
+        <item>MONOSPACE</item>
     </string-array>
 
     <string name="selectThemecolor">Select theme color</string>
+    <string name="church_name">United Evangelic church</string>
     <string-array name="themes">
-        <item>Blue</item>
-        <item>Red</item>
+        <item>BLUE</item>
+        <item>RED</item>
     </string-array>
 </resources>

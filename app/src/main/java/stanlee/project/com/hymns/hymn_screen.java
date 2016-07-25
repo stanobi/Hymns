@@ -28,8 +28,19 @@ public class hymn_screen extends Fragment {
         ViewGroup view = (ViewGroup)inflater.inflate(R.layout.fragment_hymn_screen, container, false);
         textView1 = (TextView) view.findViewById(R.id.number1);
         textView1.setTextSize(ApplicationSession.getInstance().getSelectedTextSize());
-        textView1.setTypeface(Typeface.create(ApplicationSession.getInstance().getSelectedFontStyle() ,Typeface.BOLD));
+
+        if(ApplicationSession.getInstance().getSelectedFontStyle().equalsIgnoreCase("SANS SERIF")){
+            textView1.setTypeface(Typeface.create(Typeface.SANS_SERIF ,Typeface.BOLD));
+        }else if(ApplicationSession.getInstance().getSelectedFontStyle().equalsIgnoreCase("SERIF")){
+            textView1.setTypeface(Typeface.create(Typeface.SERIF ,Typeface.BOLD));
+        }else if(ApplicationSession.getInstance().getSelectedFontStyle().equalsIgnoreCase("MONOSPACE")){
+            textView1.setTypeface(Typeface.create(Typeface.MONOSPACE ,Typeface.BOLD));
+        }else{
+            textView1.setTypeface(Typeface.create(Typeface.DEFAULT ,Typeface.BOLD));
+        }
+
         setHymnContent(ApplicationSession.getInstance().getEnglishHymns().get(getArguments().getInt("hymnNumber")-1));
+
         return view;
     }
 

@@ -13,8 +13,8 @@
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:tabIndicatorColor="@color/colorRed"
+        android:background="?attr/colorPrimary"
+        app:tabIndicatorColor="@color/windowBackground"
         app:tabGravity="center"
         app:tabMode="fixed" />
 
