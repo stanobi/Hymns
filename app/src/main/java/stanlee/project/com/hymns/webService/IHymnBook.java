@@ -14,4 +14,7 @@ public interface IHymnBook {
     @GET("users/{user}/repos")
     Call<List<String>> getRepoList(@Path("user") String user);
 
+    @GET("messages")
+    Call<String> getString();
+
 }

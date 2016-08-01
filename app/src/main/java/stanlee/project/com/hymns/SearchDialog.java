@@ -1,17 +1,11 @@
 package stanlee.project.com.hymns;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageButton;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,40 +33,40 @@ public class SearchDialog extends AppCompatActivity {
 
                 //Intent intent = new Intent(getActivity(), ScreenSlidePagerActivity.class);
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://api.github.com/")
+                        .baseUrl("http://192.168.4.16:8090/testingWebService/webapi/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
                 IHymnBook webservice = retrofit.create(IHymnBook.class);
-                Call<List<String>> theList = webservice.getRepoList("octocat");
-                theList.enqueue(new Callback<List<String>>() {
+                Call<String> theString = webservice.getString();
+                theString.enqueue(new Callback<String>() {
                     @Override
-                    public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-                        Log.d("Response Code--------->",response.code()+"");
-                        Log.d("Response List--------->",new Gson().toJson(response.body()));
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Toast.makeText(getApplicationContext(),"Response Code--------->"+response.code(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Response List--------->"+response.body(),Toast.LENGTH_LONG).show();
                     }
 
                     @Override
-                    public void onFailure(Call<List<String>> call, Throwable t) {
-                        Log.d("Exception Occureeed---","Exception");
+                    public void onFailure(Call<String> call, Throwable t) {
+                       Toast.makeText(getApplicationContext(),"Exception on "+t,Toast.LENGTH_LONG).show();
                     }
                 });
 
 
-                Intent intent = new Intent(SearchDialog.this, main_hymn_activity.class);
-                try{
-                    hymnValue = Integer.valueOf(hymnNumberInputField.getText().toString());
-                    if(hymnValue < 1 || hymnValue > 366){
-                        Toast.makeText( SearchDialog.this,"Invalid Hymn Number. Hymn number range from 1-366",Toast.LENGTH_LONG).show();
-                    }else{
-                        intent.putExtra("userHymnNumber",hymnValue);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                }catch (NumberFormatException ex){
-                    Toast.makeText(SearchDialog.this,"Invalid Hymn Number. Hymn number range from 1-366", Toast.LENGTH_LONG).show();
-                }
+//                Intent intent = new Intent(SearchDialog.this, main_hymn_activity.class);
+//                try{
+//                    hymnValue = Integer.valueOf(hymnNumberInputField.getText().toString());
+//                    if(hymnValue < 1 || hymnValue > 366){
+//                        Toast.makeText( SearchDialog.this,"Invalid Hymn Number. Hymn number range from 1-366",Toast.LENGTH_LONG).show();
+//                    }else{
+//                        intent.putExtra("userHymnNumber",hymnValue);
+//                        startActivity(intent);
+//                        finish();
+//                    }
+//
+//                }catch (NumberFormatException ex){
+//                    Toast.makeText(SearchDialog.this,"Invalid Hymn Number. Hymn number range from 1-366", Toast.LENGTH_LONG).show();
+//                }
 
             }
         });
