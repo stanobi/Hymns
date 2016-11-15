@@ -5,6 +5,10 @@
     <string name="search">search</string>
     <string name="hymn1"></string>
 
+    <string name="title1">ȠWED IKWƆ</string>
+    <string name="title2">THE CHURCH CONGREGRATIONAL HYMNS</string>
+    <string name="title3">THE ENGLISH AND EFIK HYMN BOOK</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main_hymn_activity">HYMNS</string>
 
@@ -88,14 +92,16 @@
 
     <string name="selectFontStyle">Select font style</string>
     <string-array name="fontstyles">
-        <item>News Times Roman</item>
-        <item>Lucrades</item>
-        <item>Calligraphy</item>
+        <item>DEFAULT</item>
+        <item>SANS SERIF</item>
+        <item>SERIF</item>
+        <item>MONOSPACE</item>
     </string-array>
 
     <string name="selectThemecolor">Select theme color</string>
+    <string name="church_name">United Evangelic church</string>
     <string-array name="themes">
-        <item>Blue</item>
-        <item>Red</item>
+        <item>BLUE</item>
+        <item>RED</item>
     </string-array>
 </resources>

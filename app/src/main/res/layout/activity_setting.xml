@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
-    tools:context="stanlee.project.com.hymns.HymnMenu.Setting">
+    tools:context="stanlee.project.com.efikhymns.HymnMenu.Setting">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -79,12 +79,14 @@
         android:gravity="center">
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/OKbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="OK"/>
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/CANCELbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CANCEL"/>
