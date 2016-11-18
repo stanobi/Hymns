@@ -41,7 +41,6 @@
             android:layout_below="@+id/splashScremaenText"/>
 
         <TextView
-<<<<<<< HEAD
             android:id="@+id/title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,19 +52,6 @@
             android:layout_marginBottom="20dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"/>
-=======
-        android:id="@+id/splashScremaenText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logo"
-        android:layout_marginTop="15dp"
-        android:text="@string/welcomeNote"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        android:gravity="center"/>
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5
 
     </RelativeLayout>
 

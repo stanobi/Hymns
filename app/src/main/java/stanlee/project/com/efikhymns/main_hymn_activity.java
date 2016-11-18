@@ -1,18 +1,13 @@
 package stanlee.project.com.efikhymns;
 
 import android.annotation.SuppressLint;
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/main_hymn_activity.java
+
 import android.app.Dialog;
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/main_hymn_activity.java
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/main_hymn_activity.java
 import android.net.Uri;
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/main_hymn_activity.java
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -67,7 +62,6 @@ public class main_hymn_activity extends AppCompatActivity
     private int number;
     private Bundle bundle = new Bundle();
     private LinearLayout linearLayout;
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/main_hymn_activity.java
 
     private Handler mHandler;
     private LicenseChecker mChecker;
@@ -78,9 +72,6 @@ public class main_hymn_activity extends AppCompatActivity
 
     private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkvs+LBNYJPuimDUuCOHun0rtaerglH2nDfZwxFaZK/LAsanJLtPS28gSf6OZUwODQ1NFukQ+4h2T7CiXWgPmmvJRVnoEbNtoUbx8Kirl3mxKlWWmfYT+DoGkzBZcqP3/3UjJzZDZHuOlE2TRySt4m4bRtVVyIL7/eQoERq9mALFXHFgtJOIk2OGRdDaicDgKhJLdm6mIcaMIFTEe3DC+qs2DFxr35mv033XKjaJaz6jmdb2p8MnSPJe43lNrcpshJT4PxKNv+jugaRkp3qMvCfEkWzQX6/SElmJ4IZKm/DQKFKTqv+bX6y9wSY0RR8LAghmYJ9eXgKrHoman34UbWwIDAQAB";
     private static final byte[] SALT = new byte[] {04,80,00,45,55,37,98,72,86,57,40,77,41,99,89,68,79,48,47,90};
-
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/main_hymn_activity.java
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +88,6 @@ public class main_hymn_activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/main_hymn_activity.java
         //License start
         String deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
         Log.i("Device Id", deviceId);
@@ -108,8 +98,6 @@ public class main_hymn_activity extends AppCompatActivity
         doCheck();
         //License stop
 
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/main_hymn_activity.java
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         linearLayout = (LinearLayout) navigationView.getHeaderView(0).findViewById(R.id.Navigation_background);
 
@@ -281,7 +269,6 @@ public class main_hymn_activity extends AppCompatActivity
             view.setBackground(drawable);
         }
     }
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/main_hymn_activity.java
 
     //License Start
     public void doCheck() {
@@ -391,7 +378,4 @@ public class main_hymn_activity extends AppCompatActivity
 
     }
     //License Stop
-
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/main_hymn_activity.java
 }

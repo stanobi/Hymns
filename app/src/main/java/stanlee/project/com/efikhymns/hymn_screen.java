@@ -30,10 +30,6 @@ public class hymn_screen extends Fragment {
         textView1 = (TextView) view.findViewById(R.id.number1);
         textView1.setTextSize(ApplicationSession.getInstance().getSelectedTextSize());
 
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/hymn_screen.java
-
-=======
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/hymn_screen.java
         if(ApplicationSession.getInstance().getSelectedFontStyle().equalsIgnoreCase("SANS SERIF")){
             textView1.setTypeface(Typeface.create(Typeface.SANS_SERIF ,Typeface.BOLD));
         }else if(ApplicationSession.getInstance().getSelectedFontStyle().equalsIgnoreCase("SERIF")){

@@ -38,7 +38,6 @@ public class SearchDialog extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Intent intent = new Intent(getActivity(), ScreenSlidePagerActivity.class);
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/SearchDialog.java
 //                Retrofit retrofit = new Retrofit.Builder()
 //                        .baseUrl("https://api.github.com/")
 //                        .addConverterFactory(GsonConverterFactory.create())
@@ -58,27 +57,6 @@ public class SearchDialog extends AppCompatActivity {
 //                        Log.d("Exception Occureeed---","Exception");
 //                    }
 //                });
-=======
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://api.github.com/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
-                IHymnBook webservice = retrofit.create(IHymnBook.class);
-                Call<List<String>> theList = webservice.getRepoList("octocat");
-                theList.enqueue(new Callback<List<String>>() {
-                    @Override
-                    public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-                        Log.d("Response Code--------->",response.code()+"");
-                        Log.d("Response List--------->",new Gson().toJson(response.body()));
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<String>> call, Throwable t) {
-                        Log.d("Exception Occureeed---","Exception");
-                    }
-                });
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/SearchDialog.java
 
 
                 Intent intent = new Intent(SearchDialog.this, main_hymn_activity.class);

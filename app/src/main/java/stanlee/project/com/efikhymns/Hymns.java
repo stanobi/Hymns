@@ -27,17 +27,10 @@ public class Hymns extends AppCompatActivity{
         if(st == null){
 
             //insert default values
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/Hymns.java
             st = new Settings("DEFAULT",18,"BLUE");
             st.save();
             ApplicationSession.getInstance().setSelectedFontStyle("DEFAULT");
             ApplicationSession.getInstance().setSelectedTextSize(18);
-=======
-            st = new Settings("DEFAULT",14,"BLUE");
-            st.save();
-            ApplicationSession.getInstance().setSelectedFontStyle("DEFAULT");
-            ApplicationSession.getInstance().setSelectedTextSize(14);
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/Hymns.java
             ApplicationSession.getInstance().setSelectedTheme("BLUE");
 
         }else{
@@ -62,10 +55,6 @@ public class Hymns extends AppCompatActivity{
         session.setEfikHymns(efikHymns);
         session.setEnglishHymns(englishHymns);
 
-<<<<<<< HEAD:app/src/main/java/stanlee/project/com/efikhymns/Hymns.java
-=======
-
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5:app/src/main/java/stanlee/project/com/hymns/Hymns.java
     }
 
     public void switchFragments(int contentFrameId, android.support.v4.app.Fragment replacingFragment) {

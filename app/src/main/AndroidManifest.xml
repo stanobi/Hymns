@@ -3,14 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="stanlee.project.com.efikhymns">
 
-<<<<<<< HEAD
     <uses-sdk tools:overrideLibrary="com.orm.dsl"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
-=======
-    <uses-sdk tools:overrideLibrary="com.orm.dsl" />
-    <uses-permission android:name="android.permission.INTERNET"/>
->>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5
 
     <application
         android:allowBackup="true"

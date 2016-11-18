@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
-import stanlee.project.com.hymns.ApplicationSession;
-import stanlee.project.com.hymns.R;
-import stanlee.project.com.hymns.dataTransaction.Settings;
+import stanlee.project.com.efikhymns.ApplicationSession;
+import stanlee.project.com.efikhymns.R;
+import stanlee.project.com.efikhymns.dataTransaction.Settings;
 
 public class Setting extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class Setting extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
         textSize = (Spinner) findViewById(R.id.textsizes);
-        textSize.setSelection(getIndexFromElement(textSize.getAdapter(),ApplicationSession.getInstance().getSelectedTextSize()+""));
+        textSize.setSelection(getIndexFromElement(textSize.getAdapter(), ApplicationSession.getInstance().getSelectedTextSize()+""));
 
         fontStyle = (Spinner) findViewById(R.id.styles);
         fontStyle.setSelection(getIndexFromElement(fontStyle.getAdapter(),ApplicationSession.getInstance().getSelectedFontStyle()));
