@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+#Fri Nov 18 12:59:22 WAT 2016
+=======
+#Fri Nov 04 08:44:34 WAT 2016
+>>>>>>> feature-settings
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip

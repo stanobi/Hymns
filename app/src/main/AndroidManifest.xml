@@ -1,43 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="stanlee.project.com.hymns">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="stanlee.project.com.efikhymns">
+
+<<<<<<< HEAD
+    <uses-sdk tools:overrideLibrary="com.orm.dsl"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+=======
+    <uses-sdk tools:overrideLibrary="com.orm.dsl" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+>>>>>>> 25a72b7eb7f22bff9364dbdbed7f874872afaba5
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/books_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.orm.SugarApp"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".Hymns">
+
+        <!-- Database configuration -->
+        <meta-data
+            android:name="DATABASE"
+            android:value="hymn.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="5" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="stanlee.project.com.efikhymns.dataTransaction" />
+
+        <!-- View configuration -->
+        <activity android:name="stanlee.project.com.efikhymns.Hymns">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScreenSlidePagerActivity" />
+        <activity android:name="stanlee.project.com.efikhymns.ScreenSlidePagerActivity" />
         <activity
-            android:name=".main_hymn_activity"
+            android:name="stanlee.project.com.efikhymns.main_hymn_activity"
             android:label="@string/title_activity_main_hymn_activity"
-            android:parentActivityName=".Hymns"
+            android:parentActivityName="stanlee.project.com.efikhymns.Hymns"
             android:theme="@style/MyMaterialTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="stanlee.project.com.hymns.Hymns" />
+                android:value="stanlee.project.com.efikhymns.Hymns" />
         </activity>
         <activity
-            android:name=".SearchDialog"
+            android:name="stanlee.project.com.efikhymns.SearchDialog"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="stanlee.project.com.efikhymns.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".main_hymn_activity">
+            android:parentActivityName="stanlee.project.com.efikhymns.main_hymn_activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="stanlee.project.com.hymns.Hymns" />
+                android:value="stanlee.project.com.efikhymns.Hymns" />
         </activity>
-        <activity android:name=".AboutActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
+        <activity
+            android:name="stanlee.project.com.efikhymns.HymnMenu.About"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+        </activity>
+        
+        <activity android:name="stanlee.project.com.efikhymns.HymnMenu.Setting"
+            android:label="@string/Setting"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+        </activity>
     </application>
 
 </manifest>
